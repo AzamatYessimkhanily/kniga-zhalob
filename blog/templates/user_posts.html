@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+{% block content %}
+<h1 class="mb-3">Посты пользователя: {{ user.username }} ({{ posts.total }})</h1>
+{% for post in posts.items %}s
+<div class="post">
+    {% if post.user.image_file %}
+    <img src="{{ url_for('static', filename='profile_pics/' + post.user.username + '/' + post.user.image_file) }}"
+         alt="" class="mr-3 mt-3 rounded-circle">
+    {% else %}
+    <img src="{{ url_for('static', filename='profile_pics/default.jpg') }}"
+         alt="" class="mr-3 mt-3 rounded-circle">
+    {% endif %}
+
+    <a class="mr-2" href="{{ url_for('users.user_posts', username=post.user.username)}}">{{ post.user.username }}</a>
+    <small class="text-muted">{{ post.date_posted.strftime('%d.%m.%Y-%H.%M') }}</small>
+    <h2><a class="article-title" href="{{ url_for('post.post', post_id=post.id) }}">{{ post.title }}</a></h2>
+    <p class="article-content">{{ post.content }}</p>
+
+</div>
+{% endfor %}
+<div class="post_paginate">
+    {% for page_num in posts.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=3) %}
+    {% if page_num %}
+    {% if posts.page == page_num %}
+    <a class="btn btn-info mb-4" href="{{ url_for('users.user_posts', username=user.username, page=page_num) }}">{{
+        page_num }}</a>
+    {% else %}
+    <a class="btn btn-outline-success mb-4"
+       href="{{ url_for('users.user_posts', username=user.username, page=page_num) }}">{{ page_num }}</a>
+    {% endif %}
+    {% else %}
+    <span class="ellipsis">&hellip;</span>
+    {% endif %}
+    {% endfor %}
+</div>
+{% endblock %}

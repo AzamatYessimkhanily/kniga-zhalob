@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1 class="mb-3">Все инциденты</h1>
+  {% for incident in incidents %}
+    <div class="incident mb-5">
+      <h2>Инцидент #{{ incident.id }}</h2>
+      <p>Местоположение: {{ incident.location }}</p>
+      <p>Описание: {{ incident.description }}</p>
+      <p>Телефон: {{ incident.phone_number }}</p>
+      <p>Имя: {{ incident.full_name }}</p>
+      <p>Электронная почта: {{ incident.email }}</p>
+      <p>Сотрудник фонда: {{ incident.is_foundation_employee }}</p>
+    </div>
+  {% endfor %}
+{% endblock %}

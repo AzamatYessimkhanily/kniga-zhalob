@@ -1,0 +1,54 @@
+
+
+
+/* ............//// Showcase styling ////......... */
+
+.showcase-area {
+    height: 92vh;
+    background: linear-gradient(
+      rgba(240, 240, 240, 0.092),
+      rgba(255, 255, 255, 0.171)
+    ),
+    url("https://umc.org.kz/wp-content/uploads/2019/11/slider_1.jpg");
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+  }
+/* ......//about us//...... */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .showcase-area {
+    height: 50vmax;
+  }
+}
+
+
+
+
+
+/* form styles */
+
+.transparent-form {
+    background-color: transparent;
+    border: none;
+  }
+  .transparent-form .card-header {
+    border-bottom: none;
+  }
+  .transparent-form .card-body {
+    padding: 0;
+    margin-top: 80px;
+  }
+  .transparent-form .card-body form {
+    margin: 0 auto;
+    max-width: 750px;
+    padding: 2rem;
+    backdrop-filter: blur(25px);
+    border-radius: 8px;
+    color: white;
+    font-size: 1.6rem;
+  }
+
+
+
+  /* navbar? */

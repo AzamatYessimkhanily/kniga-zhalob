@@ -1,0 +1,9 @@
+/* Change the background color of the navbar */
+.navbar {
+    background-color: #333;
+}
+
+/* Change the color of the links in the navbar */
+.navbar a {
+    color: white;
+}

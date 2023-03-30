@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<section class="showcase-area" id="showcase">
+      <div class="container py-5">
+        <div class="row justify-content-left">
+          <div class="col-md-8">
+            <div class="card transparent-form" >
+              <div class="card-body">
+                <form action="{{ url_for('main.form') }}" class="form_sign_in" enctype="multipart/form-data" method="POST">
+                  <div class="mb-3">
+                                    <div class="mb-3">
+                    <label for="full-name" class="form-label">ФИО</label>
+                    <input type="text" class="for-control" id="full-name" name="full-name" placeholder="Введите ФИО">
+                  </div>
+                    <label for="incident-location" class="form-label">Место инцидента</label>
+                    <input type="text" class="form-control" id="incident-location" name="incident-location" placeholder="Введите место инцидента">
+                  </div>
+                  <div class="mb-3">
+                    <label for="incident-description" class="form-label">Описание инцидента</label>
+                    <textarea class="form-control" id="incident-description" name="incident-description" rows="3" placeholder="Введите описание инцидента"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="incident-photo" class="form-label">Приложить фото</label>
+                    <input type="file" class="form-control" id="incident-photo" name="incident-photo">
+                  </div>
+                  <div class="mb-3">
+                    <label for="is-foundation-employee" class="form-label">Вы сотрудник фонда?</label>
+                    <select class="form-select" id="is-foundation-employee" name="is_foundation_employee">
+                      <option value="yes">Да</option>
+                      <option value="no">Нет</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phone-number" class="form-label">Номер телефона</label>
+                    <input type="tel" class="form-control" id="phone-number" name="phone-number" placeholder="Введите номер телефона">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Введите email">
+                  </div>
+                 <div class="mb-3">
+                    <input type="submit" class="btn btn-primary" value="Отправить">
+                </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock content %}
+
+
+
+
+
+
+
+
